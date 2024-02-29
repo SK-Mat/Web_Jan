@@ -87,7 +87,7 @@ def get_info(conditions_row):
         room_list["店名"] = key
         response = requests.get(url).text
         soup = BeautifulSoup(response, 'html.parser')
-        time.sleep(1.0)
+        time.sleep(0.5)
         for value,machine_name in [['input[value="10"]',"JOYSOUND MAX GO"],['input[value="7"]',"JOYSOUND MAX2"],['input[value="2"]',"JOYSOUND MAX"],['input[value="6"]',"LIVE DAM STADIUM"],['input[value="9"]',"LIVE DAM Ai"]]:
             for tag in soup.select(value):
                 left_room_num = tag.get("data-stock")
